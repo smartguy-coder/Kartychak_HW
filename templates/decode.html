@@ -1,0 +1,18 @@
+{% extends 'base.html '%}
+
+{% block content %}
+{{ super() }}
+
+<p>Please, enter the timestamp to decrypt text</p>
+<br>
+<form action="/decode" method="post" class="form-contact">
+	<p><label>timestamp:</label><input type="text" name="timestamp" value="" required=""></p>
+	
+	<p><input type="submit" value="SUBMIT"></p>
+</form>
+
+{% for cat, msg in get_flashed_messages(True) %}
+	<div class='flash {{cat}}'>{{msg}}</div>
+{% endfor %}
+
+{% endblock %}
